@@ -33,7 +33,7 @@ class Entry(Model):
 def initialize():
     """create the database and the table if they don't exist."""
 
-    db.connect()
+    db.connect(reuse_if_open=True)
     db.create_tables([Entry], safe=True)
 
 
